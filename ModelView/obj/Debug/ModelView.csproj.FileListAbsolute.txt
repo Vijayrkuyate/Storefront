@@ -1,0 +1,5 @@
+D:\StoreFrontVersion1\ModelView\bin\Debug\ModelView.dll
+D:\StoreFrontVersion1\ModelView\bin\Debug\ModelView.pdb
+D:\StoreFrontVersion1\ModelView\obj\Debug\ModelView.dll
+D:\StoreFrontVersion1\ModelView\obj\Debug\ModelView.pdb
+D:\StoreFrontVersion1\ModelView\obj\Debug\ModelView.csprojResolveAssemblyReference.cache

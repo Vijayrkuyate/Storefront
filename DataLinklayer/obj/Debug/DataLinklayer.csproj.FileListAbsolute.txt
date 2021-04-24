@@ -1,0 +1,7 @@
+D:\StoreFrontVersion1\DataLinklayer\bin\Debug\DataLinklayer.dll
+D:\StoreFrontVersion1\DataLinklayer\bin\Debug\DataLinklayer.pdb
+D:\StoreFrontVersion1\DataLinklayer\obj\Debug\DataLinklayer.dll
+D:\StoreFrontVersion1\DataLinklayer\obj\Debug\DataLinklayer.pdb
+D:\StoreFrontVersion1\DataLinklayer\bin\Debug\ModelView.dll
+D:\StoreFrontVersion1\DataLinklayer\bin\Debug\ModelView.pdb
+D:\StoreFrontVersion1\DataLinklayer\obj\Debug\DataLinklayer.csprojResolveAssemblyReference.cache

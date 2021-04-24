@@ -1,0 +1,9 @@
+D:\StoreFrontVersion1\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+D:\StoreFrontVersion1\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\StoreFrontVersion1\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\StoreFrontVersion1\BusinessLayer\bin\Debug\DataLinklayer.dll
+D:\StoreFrontVersion1\BusinessLayer\bin\Debug\ModelView.dll
+D:\StoreFrontVersion1\BusinessLayer\bin\Debug\DataLinklayer.pdb
+D:\StoreFrontVersion1\BusinessLayer\bin\Debug\ModelView.pdb
+D:\StoreFrontVersion1\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\StoreFrontVersion1\BusinessLayer\obj\Debug\BusinessLayer.pdb

@@ -1,0 +1,153 @@
+﻿@model IEnumerable<ModelView.Cart>
+<table class="table cart m-bottom0">
+    <tbody>
+        <tr>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Year</th>
+            
+            <th>Email Count</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var item in ViewBag.CartList)
+        {
+            <tr>
+                <td>
+                    @if (@item.ProductType == "E")
+                    {
+                        <a href="#">Email</a>
+                    }
+                    @if (@item.ProductType == "H")
+                    {
+                        <a href="#">Hosting</a>
+                    }
+                    @if (@item.ProductType == "D")
+                    {
+                        <a href="#">Domain</a>
+                    }
+                </td>
+                <td><span>@item.ProductName</span></td>
+                @if (@item.ProductType == "E")
+                {
+                    <td>
+                        <input type="hidden" id="IntractId" name="rank" value=@item.CartId>
+
+                        <select id="cars" class="form-control">
+                            @if (@item.SubscriptionId == "1")
+                            {
+                                <option selected value="1">1-Month</option>
+                            }
+                            else
+                            {
+                                <option value="1">1-Month</option>
+                            }
+                            @if (@item.SubscriptionId == "2")
+                            {
+                                <option selected value="2">3-Month</option>
+                            }
+                            else
+                            {
+                                <option value="2">3-Month</option>
+                            }
+                            @if (@item.SubscriptionId == "3")
+                            {
+                                <option selected value="3">6-Month</option>
+                            }
+                            else
+                            {
+                                <option value="3">6-Month</option>
+                            }
+                            @if (@item.SubscriptionId == "4")
+                            {
+                                <option selected value="4">12-Month</option>
+                            }
+                            else
+                            {
+                                <option value="1">12-Month</option>
+                            }
+                        </select>
+
+                    </td>
+                }
+                else
+                {
+                    <td><span>1-Year</span></td>
+                }
+
+                <td>
+                    <input type="hidden" id="IntractId1" name="rank" value=@item.CartId>
+                <input type="text" id="Emailcount" class="form-control" value=@item.EmailCount name="fname" style="width: 107px;"></td>
+                <td><span>@item.Price</span></td>
+                <td scope="row">
+                    <input type="hidden" id="IntractId" name="rank" value=@item.CartId>
+                    <a id="Delete"><i class="fa fa-trash fa-2x"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Scripts.Render("~/bundles/jqueryval")
+
+<script src="https://master.pioneersoft.co.in/Content/js/jquery.min.js"></script>
+<script src="https://master.pioneersoft.co.in/Content/js/countrystatecity.js"></script>
+<script src="https://master.pioneersoft.co.in/Content/js/bootstrap.min.js"></script>
+<script>
+    $('body').on('click', '#Delete', function () {
+        debugger;
+        var CartId = $(this).siblings("#IntractId").val();
+
+        var dd = getJsonResult("@Url.Action("DeleteHostingCartItem", "Home")", { CartId });
+        var d = loadData("@Url.Action("_partialEmailCartList", "Home")");
+        $('#cartlist').html(d);
+
+        var d = loadData("@Url.Action("_partialHostingorderSummary", "Home")");
+        $('#ordersummary').html(d);
+        var messege = '';
+        if (dd.Status == 200) {
+            messege = 'Record saved successfully';
+        }
+        else {
+            messege = 'Internal server error please try again';
+        }
+
+    });
+    $('body').on('change', '#cars', function () {
+        debugger;
+        var CartId = $(this).siblings("#IntractId").val();
+        var Year = $(this).val();
+        var dd = getJsonResult("@Url.Action("UpdateSubscription", "Home")", { CartId, Year });
+        var d = loadData("@Url.Action("_partialCartList", "Home")");
+        $('#cartlist').html(d);
+
+        var d = loadData("@Url.Action("_partialHostingorderSummary", "Home")");
+        $('#ordersummary').html(d);
+        var messege = '';
+        if (dd.Status == 200) {
+            messege = 'Record saved successfully';
+        }
+        else {
+            messege = 'Internal server error please try again';
+        }
+
+    });
+    $('body').on('focusout', '#Emailcount', function () {
+        debugger;
+        var CartId = $(this).siblings("#IntractId1").val();
+        var Year = $(this).val();
+        var dd = getJsonResult("@Url.Action("UpdateEmailCount", "Home")", { CartId, Year });
+        var d = loadData("@Url.Action("_partialEmailCartList", "Home")");
+        $('#cartlist').html(d);
+
+        var d = loadData("@Url.Action("_partialHostingorderSummary", "Home")");
+        $('#ordersummary').html(d);
+        var messege = '';
+        if (dd.Status == 200) {
+            messege = 'Record saved successfully';
+        }
+        else {
+            messege = 'Internal server error please try again';
+        }
+
+    });
+</script>
